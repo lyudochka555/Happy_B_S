@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Свете — 20! 🎉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Фон из сердечек -->
+<div class="bg-hearts" id="bgHearts"></div>
+
+<!-- Конфетти -->
+<canvas id="confetti-canvas"></canvas>
+
+<div class="wrap">
+
+  <!-- Заголовок -->
+  <header>
+    <div class="badge">20 лет · 2026</div>
+    <h1>
+      С днём рождения,
+      <span class="name" id="nameTrigger">Света</span>
+      <span class="age">🎂</span>
+    </h1>
+    <p class="subtitle">Двадцать — это не цифра. Это целая эпоха радости, смеха и открытий.</p>
+  </header>
+
+  <!-- Поздравление -->
+  <section class="card reveal">
+    <h2><span class="emoji">💌</span> Тёплые слова</h2>
+    <p>
+      Света, солнце, с двадцатилетием! В двадцать мир становится чуточку больше —
+      но ты становишься ещё ярче. Пусть каждый день будет как объятие:
+      мягким, тёплым и немного неожиданным. Пусть сбывается всё, о чём ты мечтаешь
+      даже шёпотом. Ты — свет, и это даже в имени. ✨
+    </p>
+  </section>
+
+  <!-- МИНИ-ИГРА: Поймай торт -->
+  <section class="card reveal">
+    <h2><span class="emoji">🕹️</span> Поймай сладости</h2>
+    <p class="mb-20">Двигай мышкой (или пальцем) и лови падающие вкусности. Только не пропусти!</p>
+    
+    <div class="game-wrapper">
+      <div class="game-hud">
+        <span id="gameScore">Счёт: 0</span>
+        <span id="gameTime">Время: 15с</span>
+      </div>
+      <div class="game-area" id="gameArea">
+        <div class="game-basket" id="gameBasket">🧺</div>
+        <div class="game-start-overlay" id="gameStartOverlay">
+          <button class="btn" id="gameStartBtn">Играть 🎮</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Кнопка конфетти -->
+  <section class="card reveal center">
+    <h2><span class="emoji">🎊</span> Нажми на кнопку</h2>
+    <p class="mb-24">Здесь начинается праздник. И конфетти. Много конфетти.</p>
+    <button class="btn" id="partyBtn">Запустить праздник 🎉</button>
+  </section>
+
+  <!-- Милые и смешные видео -->
+  <section class="card reveal">
+    <h2><span class="emoji">📹</span>Смешные видосы</h2>
+    <p class="mb-20">Немного видео, от которых улыбка не сходит с лица.😊</p>
+    <div class="video-grid">
+      <div class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="video/2.mp4" type="video/mp4">
+        </video>
+        
+      </div>
+      <div class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="video/1.mp4" type="video/mp4">
+        </video>
+       
+      </div>
+      <div class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="video/3.mp4" type="video/mp4">
+        </video>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Сделано с любовью для Светы <span class="heart">♥</span> 2026
+  </footer>
+</div>
+
+<!-- Тост -->
+<div class="toast" id="toast">🎉 Ура! Свете 20!</div>
+
+<script src="script.js"></script>
+</body>
+</html>
