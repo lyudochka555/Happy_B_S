@@ -263,3 +263,46 @@ document.getElementById('nameTrigger').addEventListener('click', () => {
   window.launchConfetti(80);
   showToast('😘 Света, ты супер!');
 });
+/* ============================================================
+   8. КАРУСЕЛЬ ВИДЕО (Стрелочки + Пауза старого видео)
+   ============================================================ */
+(function initVideoCarousel() {
+  const carousel = document.getElementById('videoCarousel');
+  const prevBtn = document.getElementById('videoPrev');
+  const nextBtn = document.getElementById('videoNext');
+  
+  if (!carousel) return;
+
+  // Останавливаем все видео
+  function pauseAllVideos() {
+    const videos = carousel.querySelectorAll('video');
+    videos.forEach(v => v.pause());
+  }
+
+  // Листаем Вперед
+  nextBtn.addEventListener('click', () => {
+    pauseAllVideos();
+    const cardWidth = carousel.querySelector('.video-card').offsetWidth + 20; 
+    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  });
+
+  // Листаем Назад
+  prevBtn.addEventListener('click', () => {
+    pauseAllVideos();
+    const cardWidth = carousel.querySelector('.video-card').offsetWidth + 20;
+    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  });
+
+  // Если свайпнули пальцем — тоже ставим на паузу
+  carousel.addEventListener('touchstart', pauseAllVideos, { passive: true });
+  
+  // Если включили одно видео, остальные ставим на паузу
+  const videos = carousel.querySelectorAll('video');
+  videos.forEach(video => {
+    video.addEventListener('play', () => {
+      videos.forEach(v => {
+        if (v !== video) v.pause();
+      });
+    });
+  });
+})();

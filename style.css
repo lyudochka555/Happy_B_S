@@ -104,14 +104,78 @@ h1 .age { display: inline-block; font-size: 0.55em; color: var(--gold); -webkit-
 .game-start-overlay.hidden { display: none; }
 
 /* ========== ВИДЕО ========== */
-.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 10px; }
-.video-card { border-radius: 20px; overflow: hidden; background: #000; position: relative; box-shadow: 0 15px 35px -15px rgba(120,80,80,0.5); transition: transform 0.35s ease; }
-.video-card:hover { transform: scale(1.03); }
-.video-card video { width: 100%; height: 100%; display: block; aspect-ratio: 9 / 16; object-fit: cover; }
-.video-card .video-label {
-  position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px); color: var(--text); font-size: 0.8rem; font-weight: 600;
-  padding: 8px 14px; border-radius: 30px; text-align: center;
+/* ========== КАРУСЕЛЬ ВИДЕО СО СТРЕЛКАМИ ========== */
+.video-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.video-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding-bottom: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.video-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.video-card {
+  flex: 0 0 100%; /* 1 видео на телефоне */
+  scroll-snap-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  box-shadow: 0 15px 35px -15px rgba(120,80,80,0.5);
+}
+@media (min-width: 600px) {
+  .video-card {
+    flex: 0 0 calc(50% - 10px); /* 2 видео на ПК */
+  }
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+/* Кнопки-стрелки */
+.video-arrow {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--blush);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(180,130,130,0.3);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 10;
+}
+.video-arrow:hover {
+  background: var(--blush);
+  color: #fff;
+  transform: scale(1.1);
+}
+.video-arrow:active {
+  transform: scale(0.95);
 }
 
 /* ========== ФУТЕР И ТОСТ ========== */

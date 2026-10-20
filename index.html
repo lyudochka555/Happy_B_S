@@ -34,10 +34,8 @@
   <section class="card reveal">
     <h2><span class="emoji">💌</span> Тёплые слова</h2>
     <p>
-      Света, солнце, с двадцатилетием! В двадцать мир становится чуточку больше —
-      но ты становишься ещё ярче. Пусть каждый день будет как объятие:
-      мягким, тёплым и немного неожиданным. Пусть сбывается всё, о чём ты мечтаешь
-      даже шёпотом. Ты — свет, и это даже в имени. ✨
+      Света, с двадцатилетием! Пусть каждый день твоей жизни будет наполнен радостью, миром и любовью. Пусть все самые заветные желания обязательно сбываются, а мечты сбываются даже быстрее, чем ты успеваешь их загадать. ✨
+Пусть в твоей жизни будет столько денег, чтобы ты могла позволить себе всё, что падает на глаза в Пинтересте, и столько сил, чтобы наслаждаться каждым моментом. Оставайся такой же весёлой, сияй ярче всех! 💖
     </p>
   </section>
 
@@ -68,28 +66,39 @@
   </section>
 
   <!-- Милые и смешные видео -->
-  <section class="card reveal">
+    <section class="card reveal">
     <h2><span class="emoji">📹</span>Смешные видосы</h2>
     <p class="mb-20">Немного видео, от которых улыбка не сходит с лица.😊</p>
-    <div class="video-grid">
-      <div class="video-card">
-        <video controls playsinline preload="metadata">
-          <source src="video/2.mp4" type="video/mp4">
-        </video>
+    
+    <div class="video-carousel-wrapper">
+      <!-- Кнопка Влево -->
+      <button class="video-arrow prev" id="videoPrev">❮</button>
+      
+      <!-- Сама карусель -->
+      <div class="video-carousel" id="videoCarousel">
         
-      </div>
-      <div class="video-card">
-        <video controls playsinline preload="metadata">
-          <source src="video/1.mp4" type="video/mp4">
-        </video>
-       
-      </div>
-      <div class="video-card">
-        <video controls playsinline preload="metadata">
-          <source src="video/3.mp4" type="video/mp4">
-        </video>
+        <div class="video-card">
+          <video controls playsinline preload="metadata">
+            <source src="video/2.mp4" type="video/mp4">
+          </video>
+        </div>
         
+        <div class="video-card">
+          <video controls playsinline preload="metadata">
+            <source src="video/1.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="video-card">
+          <video controls playsinline preload="metadata">
+            <source src="video/3.mp4" type="video/mp4">
+          </video>
+        </div>
+
       </div>
+      
+      <!-- Кнопка Вправо -->
+      <button class="video-arrow next" id="videoNext">❯</button>
     </div>
   </section>
 
