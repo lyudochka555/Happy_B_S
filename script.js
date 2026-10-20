@@ -202,7 +202,7 @@ function showToast(text) {
     items = [];
     
     let msg = '';
-    if (score >= 100) msg = '🏆 Ты просто бог сладостей!';
+    if (score >= 100) msg = '🏆 Ты просто босс, просто начальник!';
     else if (score >= 50) msg = '🍰 Отличный результат!';
     else msg = '🧁 Неплохо, но торт тебя ждёт!';
 
@@ -231,7 +231,7 @@ let partyClicks = 0;
 partyBtn.addEventListener('click', () => {
   window.launchConfetti(160);
   partyClicks++;
-  const phrases = ['🎉 Ура! Свете 20!', '💖 Ты — ЛУЧШАЯ!', '🥳 Пусть всё сбудется!', '✨ Двадцать — это красиво!'];
+  const phrases = ['🎉 Ура! Свете 20!', '💖 Ты — ЛУЧШАЯ!', '🥳 Пусть всё сбудется!', '✨ Двадцать — это чётко!'];
   showToast(phrases[(partyClicks - 1) % phrases.length]);
 });
 
